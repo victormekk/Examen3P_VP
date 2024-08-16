@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen3P_VP.Views.Principal"
+             Title="Notas"
+             BackgroundColor="White">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Text="·"
+            Clicked="OnBtnLimpiarClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <VerticalStackLayout>
+        <StackLayout 
+            Spacing="15" 
+            Padding="15">
+
+            <Frame 
+                CornerRadius="2"
+                Padding="0" 
+                WidthRequest="170" 
+                HeightRequest="220">
+                <StackLayout>
+                    <Image 
+                        x:Name="imgFoto"
+                        Aspect="AspectFill"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand"
+                        HeightRequest="180"
+                        BackgroundColor="White"/>
+
+                    <Button 
+                        Text="📷"
+                        Clicked="OnBtnFotoClicked"
+                        WidthRequest="150"
+                        HeightRequest="50"
+                        FontSize="20"
+                        BackgroundColor="#2b0098"
+                        CornerRadius="50"/>
+                </StackLayout>
+            </Frame>
+
+
+            <Frame Padding="0">
+                <StackLayout>
+                    <Label 
+                        Text="NOTA DE VOZ" 
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        Margin="0, 20, 0, 20"/>
+                    
+                    <Button 
+                        Margin="0,0,0,20"
+                        x:Name="btnBtnStartRecording"
+                        Text="Grabar/Detener"
+                        ImageSource="microphone_ico.png"
+                        Clicked="OnBtnStartRecordingClicked"
+                        CornerRadius="50"
+                        WidthRequest="300"
+                        HeightRequest="50"
+                        FontSize="16"
+                        BackgroundColor="#2b0098"
+                        VerticalOptions="End"/>
+                </StackLayout>
+            </Frame>
+
+
+            <Frame 
+                CornerRadius="10" 
+                Padding="5" 
+                HeightRequest="180">
+                <StackLayout>
+                    <Label 
+                        Margin="0,20,0,20"
+                        Text="DESCRIPCION"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"/>
+
+                    <Editor 
+                        x:Name="txtDescripcion" 
+                        Keyboard="Chat" 
+                        HeightRequest="120"/>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout>
+                <Button 
+                    Margin="0,0,0,10"
+                    Text="GUARDAR"
+                    FontSize="16"
+                    CornerRadius="50"
+                    Clicked="OnBtnGuardarClicked"
+                    WidthRequest="250"
+                    HeightRequest="45"
+                    BackgroundColor="#2b0098"
+                    HorizontalOptions="Center"/>
+
+                <Button 
+                    Text="NOTAS"
+                    FontSize="16"
+                    WidthRequest="250"
+                    HeightRequest="45"
+                    CornerRadius="50"
+                    Clicked="OnBtnListaClicked"
+                    BackgroundColor="#2b0098"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+            
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
